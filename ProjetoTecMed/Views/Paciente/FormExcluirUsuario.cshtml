@@ -1,0 +1,64 @@
+﻿@{
+    Layout = ViewBag.Layout;
+}
+<h2>Excluir Usuario</h2>
+
+<form method="post" action="~/Paciente/ExcluirUsuario">
+
+    <span style="color:red">@ViewBag.Mensagem</span>
+
+    <div class="form-row">
+        <div class="input-group col-md-6">
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <input type="radio" name="check" value="nome"> Excluir por Nome
+
+                </div>
+            </div>
+            <input type="text" class="form-control form-control-sm" name="nome" placeholder="Nome">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="input-group col-md-6">
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <input type="radio" name="check" value="id"> Excluir por ID
+                </div>
+            </div>
+            <input type="text" class="form-control form-control-sm" name="id" placeholder="Id Funcionário">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="portas">Selecione um Tipo:</label>
+            <select class="form-control" name="tipo" id="portas">
+                @foreach (var tipo in ViewBag.ListaTipos)
+                {
+                    <option value="@tipo">@tipo</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <button type="submit" class="btn btn-sm btn-warning form-control">Excluir</button>
+        </div>
+        <div class="form-group col-md-3">
+            <a href="javascript:window.history.go(-1)" class="btn btn-sm btn-danger ml-md-2 form-control">Voltar</a>
+        </div>
+    </div>
+
+</form>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input[type=radio]').change(function () {
+            $('input[type=radio]:checked').not(this).prop('checked', false);
+        });
+    });
+
+</script>
+

@@ -1,0 +1,32 @@
+﻿@{
+    Layout = ViewBag.Layout;
+}
+
+<h2>Configurar Leitor</h2>
+
+<form method="post" action="~/Configuracoes/PortaSelecionada" enctype="multipart/form-data">
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="portas">Selecione uma das Portas:</label>
+            <select class="form-control" name="porta" id="portas">
+                @foreach (var porta in ViewBag.ListaPortas)
+                {
+                    <option value="@porta">@porta</option>
+                }
+            </select>
+        </div>
+
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <button type="submit" class="btn btn-sm btn-success form-control">Salvar</button>
+        </div>
+
+        <div class="form-group col-md-3">
+            <a href="javascript:window.history.go(-1)" class="form-control btn btn-sm btn-danger ml-md-2">Voltar</a>
+        </div>
+    </div>
+</form>
+

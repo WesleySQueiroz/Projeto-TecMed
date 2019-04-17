@@ -1,0 +1,53 @@
+﻿@{ 
+    Layout = "_LayoutMenu";
+}
+
+<div class="container-fluid d-md-flex justify-content-md-start mb-md-7">
+
+    <span>@ViewBag.Nome</span>
+
+    <div>
+        <div class="list-group">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a>Consultas</a>
+                    <ul>
+                        <li><a class="list-group-item list-group-item-action list-group-item-primary" asp-controller="Consulta" asp-action="BuscarConsulta">Buscar Consulta</a></li>
+                        <li><a class="list-group-item list-group-item-action list-group-item-primary" asp-controller="Consulta" asp-action="ListaConsulta">Todas as Consultas</a></li>
+                        
+                    </ul>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a>Cadastros</a>
+                    <ul>
+                        <li><a class="list-group-item list-group-item-action list-group-item-primary" asp-controller="Paciente" asp-action="CadastrarPaciente">Cadastrar Paciente</a></li>
+
+                        <li><a class="list-group-item list-group-item-action list-group-item-primary" asp-controller="Usuario" asp-action="CadastraUsuario">Cadastrar Usuario</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a>Cartão Paciente</a>
+                    <ul>
+                        <li><a class="list-group-item list-group-item-action list-group-item-primary" asp-controller="Paciente" asp-action="CartaoPaciente">Buscar Por Cartão</a></li>
+                        <li><a class="list-group-item list-group-item-action list-group-item-primary" asp-controller="Paciente" asp-action="CadastrarCartao">Adicionar Cartão ao Paciente</a></li>
+                        <li><a class="list-group-item list-group-item-action list-group-item-primary" asp-controller="Paciente" asp-action="DescadastrarCartao">Remover Cartão ao Paciente</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!--Page Content-->
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+        $('#myList a:last-child').tab('show')
+    })
+</script>

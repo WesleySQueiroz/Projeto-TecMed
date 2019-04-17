@@ -1,0 +1,14 @@
+﻿@{
+    Layout = ViewBag.Layout;
+}
+
+<h2>Escolha o Metodo de Confirmação de Check - In</h2>
+
+
+<div>
+
+    <input type="button" value="Normal" class="btn btn-sm btn-success" onclick="location.href='@Url.Action("RealizarCheckIn", "Consulta", new { idconsulta = ViewBag.IdConsulta})'" />
+
+    <input type="button" value="Com Cartão" class="btn btn-sm btn-success" onclick="location.href='@Url.Action("MarcarCheckInComCartao", "Consulta", new { idconsulta = ViewBag.IdConsulta} )'" />
+
+</div>

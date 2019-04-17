@@ -1,0 +1,65 @@
+﻿@{
+    Layout = ViewBag.Layout;
+}
+
+
+<h2>Busca Paciente</h2>
+
+<div>
+    <table class="table table-bordered table-hover sortable" style="height:300px; vertical-align:middle">
+        <thead>
+            <tr>
+                <th style="width:30px">CPF</th>
+                <th style="width:100px">Nome</th>
+                <th style="width:20px">Data de Nasciemnto</th>
+                <th style="width:20px">Telefone</th>
+                <th style="width:15px">Numero</th>
+                <th style="width:30px">Cidade</th>
+                <th style="width:30px">Estado</th>
+                <th style="width:30px">Cadastrar</th>
+                <th style="width:30px">Remover Cartão</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>@ViewBag.Cpf</td>
+                <td>@ViewBag.Nome</td>
+                <td>@ViewBag.Data</td>
+                <td>@ViewBag.Telefone</td>
+                <td>@ViewBag.Numero</td>
+                <td>@ViewBag.Cidade</td>
+                <td>@ViewBag.Estado</td>
+                <td>
+                    @{
+                        string Adicionar = "Adicionar Cartão";
+                    }
+                    @Html.ActionLink(Adicionar, "CadastroCartaoPaciente", new
+                   {
+                     cpf = ViewBag.Cpf
+                    },
+                    new { @style = "color:#0000a2; text-decoration: underline;" })
+                </td>
+                <td>
+                    @{
+                        string Remover = "Remover Cartão";
+                    }
+                    @Html.ActionLink(Remover, "RemoverCartaoPaciente", new
+                   {
+                     cpf = ViewBag.Cpf
+                    },
+                    new { @style = "color:#0000a2; text-decoration: underline;" })
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="mb-md-2 d-md-flex justify-content-md-start col-md-12">
+        <a href="javascript:window.history.go(-1)" class="btn btn-sm btn-danger ml-md-2">Voltar</a>
+    </div>
+
+</div>
+
+

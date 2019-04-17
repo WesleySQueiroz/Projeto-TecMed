@@ -1,0 +1,46 @@
+﻿@{
+    Layout = ViewBag.Layout;
+}
+
+<h2>Realiza Check In com Cartão</h2>
+
+<p>Confirme os dados</p>
+
+
+<form method="post" action="~/Consulta/CadastrarConsultaCheckIn" enctype="multipart/form-data">
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="cpf">CPF:</label>
+            <input class="form-control form-control-sm" id="cpf" type="text" name="cpf" value="@ViewBag.CPF" readonly />
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="nome">Nome:</label>
+            <input style="text-transform:uppercase" class="form-control form-control-sm" id="nome" maxlength="150" type="text" name="nome" value="@ViewBag.Nome" readonly />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="dt_nasc">Consulta:</label>
+            <input class="form-control form-control-sm" id="nb_consulta" type="number" name="id" value="@ViewBag.IdConsulta" readonly />
+        </div>
+        <div class="form-group col-md-6">
+            <label for="tipo">Tipo:</label>
+            <input class="form-control form-control-sm" id="nb_consulta" type="number" name="tipo" value="@ViewBag.ListaTipo" readonly />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <button type="submit" class="form-control btn btn-sm btn-success">Salvar</button>
+        </div>
+
+        <div class="form-group col-md-3">
+            <a href="javascript:window.history.go(-1)" class="form-control btn btn-sm btn-danger ml-md-2">Voltar</a>
+        </div>
+    </div>
+
+</form>
+

@@ -1,0 +1,45 @@
+﻿@{
+    Layout = ViewBag.Layout;
+}
+<h2>Cadastrar Agenda</h2>
+
+<form method="post" action="~/Consulta/AdicionarAgenda" enctype="multipart/form-data">
+    <span style="color:red">@ViewBag.Mensagem</span>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="data">Data:</label>
+            <input class="form-control" id="cpf" type="date" name="data" />
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inicio">Hora de Inicio:</label>
+            <input class="form-control" style="text-transform:uppercase" id="nome" maxlength="150" type="time" name="hora_inicio" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="final">Hora de Termino:</label>
+            <input class="form-control" id="dt_nasc" type="time" name="hora_fim" />
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="CRM">CRM:</label>
+            <input class="form-control" id="Vl_Calorias" type="text" name="crm" />
+        </div>
+
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <button type="submit" class="form-control btn btn-sm btn-success">Cadastrar</button>
+        </div>
+
+        <div class="form-group col-md-3">
+            <a href="javascript:window.history.go(-1)" class="form-control btn btn-sm btn-danger ml-md-2">Voltar</a>
+        </div>
+    </div>
+
+</form>
+

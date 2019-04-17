@@ -1,0 +1,86 @@
+﻿@{
+    Layout = ViewBag.Layout;
+}
+
+
+<h2>Cadastrar Paciente</h2>
+
+
+<form method="post" action="~/Paciente/AdicionaPaciente" enctype="multipart/form-data">
+
+    <span style="color:red;">@ViewBag.Mensagem</span>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="cpf">CPF:</label>
+            <input class="form-control form-control-sm" id="cpf" type="text" name="paciente.cpf" />
+        </div>
+        <div class="form-group col-md-6">
+            <label for="nome">Nome:</label>
+            <input style="text-transform:uppercase" class="form-control form-control-sm" id="nome" maxlength="150" type="text" name="paciente.nome" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="dt_nasc">Data de Nascimento:</label>
+            <input class="form-control form-control-sm" type="date" name="paciente.dt_nasc" />
+        </div>
+        <div class="form-group col-md-6">
+            <label for="rua">Logradouro:</label>
+            <input class="form-control form-control-sm" type="text" name="paciente.rua" />
+        </div>
+
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="num">Nº Endereço:</label>
+            <input class="form-control form-control-sm" type="number" name="paciente.numero" />
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="cidade">Cidade:</label>
+            <input class="form-control form-control-sm" type="text" name="paciente.cidade" />
+        </div>
+
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="estado">Estado:</label>
+            <input class="form-control form-control-sm" maxlength="2" type="text" name="paciente.estado" />
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="telefone">Telefone:</label>
+            <input class="form-control form-control-sm" type="text" name="paciente.telefone" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="estado">Login:</label>
+            <input class="form-control form-control-sm" maxlength="15" type="text" name="paciente.login" />
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="telefone">Senha:</label>
+            <input class="form-control form-control-sm" type="password" name="paciente.senha" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <button type="submit" class="form-control btn btn-sm btn-success">Cadastrar</button>
+        </div>
+
+        <div class="form-group col-md-3">
+            <a href="javascript:window.history.go(-1)" class="form-control btn btn-sm btn-danger ml-md-2">Voltar</a>
+        </div>
+    </div>
+
+
+</form>
+
+

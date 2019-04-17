@@ -1,0 +1,82 @@
+﻿@{
+    Layout = ViewBag.Layout;
+}
+
+<h2>Realiza Busca</h2>
+
+<div class="d-md-flex justify-content-md-start col-md-12" style="height: 42px; vertical-align:middle">
+    <table class="table table-bordered table-hover sortable" style="background-color: white;">
+        <thead>
+            <tr>
+                <th style="width:10px">Numero</th>
+                <th style="width:15px">Data</th>
+                <th style="width:15px">Medico</th>
+                <th style="width:20px">Paciente</th>
+                <th style="width:20px">Hora Inicio</th>
+                <th style="width:20px">Hora Fim</th>
+                <th style="width:20px">Status</th>
+                <th style="width:20px">Tipo</th>            
+                <th style="width:20px">Confirmação</th>
+            </tr>
+        </thead>
+
+        <tbody id="tabela-consulta">
+            @foreach (var consulta in ViewBag.ListaConsulta)
+            {
+                <tr>
+                    <td>@consulta.id_consulta</td>
+                    <td>@consulta.dt_consulta</td>
+
+                    <td>
+                        @{
+                            string medico = consulta.id_medico;
+                        }
+                        @Html.ActionLink(medico, "FormDadosMedico", new
+                       {
+                         crmMedico = consulta.id_medico
+
+                        },
+                        new { @style = "color:#0000a2; text-decoration: underline;" })
+
+                    </td>
+                    <td>
+                        @{
+                            string paciente = consulta.cpf;
+                        }
+
+                        @Html.ActionLink(paciente, "FormDadosPaciente", new
+                        {
+                       cpfPaciente = consulta.cpf
+                        },
+                        new { @style = "color:#0000a2; text-decoration: underline;" })
+
+                    </td>
+                    <td>@consulta.hr_inicio</td>
+                    <td>@consulta.hr_fim</td>
+                    <td>@consulta.status</td>
+                    <td>@consulta.tipo</td>           
+                    @{
+                        if (consulta.status == "Aberto")
+                        {
+                            <td><a class="list-group-item list-group-item-action list-group-item-primary" asp-controller="Consulta" asp-action="MetodoConfirmacao" asp-route-id="@consulta.id_consulta">Marcar</a></td>
+                        }
+                        else if (consulta.status == "Aguardando")
+                        {
+                            <td><a class="list-group-item list-group-item-action list-group-item-primary" asp-controller="Consulta" asp-action="MetodoConfirmacaoCheckIn" asp-route-id="@consulta.id_consulta">Check-in</a></td>
+                        }
+                        else
+                        {
+                            <td><a class="list-group-item list-group-item-action list-group-item-primary" >Realizada</a></td>
+                        }
+                    }
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+    <div class="mb-md-2 d-md-flex justify-content-md-start col-md-12">
+        <a href="javascript:window.history.go(-1)" class="btn btn-sm btn-danger ml-md-2">Voltar</a>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿@{
+    Layout = ViewBag.Layout;
+}
+
+<h2>DescadastrarCartao</h2>
+
+<div>
+    <form method="post" action="~/Paciente/ListaPaciente">
+
+        <span style="color:red">@ViewBag.Mensagem</span>
+
+        <div>
+            <div>
+                <label for="cpf">CPF:</label>
+                <input class="form-control form-control-sm" id="cpf" type="text" name="cpfPaciente" />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-sm btn-success">Buscar</button>
+            </div>
+
+        </div>
+    </form>
+
+</div>

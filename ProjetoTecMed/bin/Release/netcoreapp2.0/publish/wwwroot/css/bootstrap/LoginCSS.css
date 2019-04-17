@@ -1,0 +1,25 @@
+﻿.modal-content {
+    background-color: white;
+}
+
+.btn-link {
+    color: white;
+}
+
+.modal-heading h2 {
+    color: black;
+}
+
+body {
+    background-image: url("/images/fundosistema.PNG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 10px;
+}
+
+.imagem-login image {
+    width: 300px;
+    height: 50px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,13 @@
+﻿@{
+    Layout = ViewBag.Layout;
+}
+
+<h2>Escolha o Metodo de Confirmação</h2>
+
+<div>
+
+    <input type="button" value="Normal" class="btn btn-sm btn-success" onclick="location.href='@Url.Action("MarcarConsulta", "Consulta", new { idconsulta = ViewBag.IdConsulta})'" />
+
+    <input type="button" value="Com Cartão" class="btn btn-sm btn-success" onclick="location.href='@Url.Action("MarcarComCartao", "Consulta", new { idconsulta = ViewBag.IdConsulta} )'" />
+
+</div>

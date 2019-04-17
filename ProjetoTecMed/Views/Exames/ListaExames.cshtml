@@ -1,0 +1,51 @@
+﻿@{
+    Layout = ViewBag.Layout;
+}
+
+<h2>Lista de Exames</h2>
+
+<div>
+    <table class="table table-bordered table-hover sortable" style="background-color: white;">
+        <thead>
+            <tr>
+                <th style="10px";>Id</th>
+                <th style="15px";>CPF</th>
+                <th style="15px">CRM</th>
+                <th style="200px">Descrição</th>
+                <th style="20px";>Baixar</th>
+            </tr>
+        </thead>
+
+        <tbody id="tabela-consulta">
+            @foreach (var exame in ViewBag.Exames)
+            {
+            <tr>
+                <td>@exame.id_exame</td>
+                <td>@exame.cpf</td>
+                <td>@exame.crm</td>
+                <td>@exame.descricao</td>
+                <td><a class="list-group-item list-group-item-action list-group-item-primary">Exame</a></td>
+            </tr>
+
+
+            }
+
+        </tbody>
+
+
+
+
+    </table>
+
+    <div class="mb-md-2 d-md-flex justify-content-md-start col-md-12">
+        <a href="javascript:window.history.go(-1)" class="btn btn-sm btn-danger ml-md-2">Voltar</a>
+    </div>
+
+
+
+
+</div>
+
+
+
+

@@ -1,0 +1,64 @@
+﻿@{
+    Layout = ViewBag.Layout;
+}
+
+<h2>Dados do Paciente</h2>
+
+<form method="post" action="~/Consulta/CadastrarConsulta" enctype="multipart/form-data">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="cpf">CPF:</label>
+            <input class="form-control" id="cpf" type="text" name="usuario.cpf" value="@ViewBag.CPF" readonly />
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="nome">Nome:</label>
+            <input class="form-control" style="text-transform:uppercase" id="nome" type="text" name="usuario.nome" value="@ViewBag.Nome" readonly />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="dt_nasc">Data de Nascimento:</label>
+            <input class="form-control" id="dt_nasc" type="text" name="usuario.dt_nasc" required value="@ViewBag.DtNasc" readonly />
+        </div>
+        <div class="form-group col-md-6">
+            <label for="rua">Logradouro:</label>
+            <input class="form-control" id="rua" type="text" name="usuario.rua" value="@ViewBag.Rua" readonly />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="Num">Numero:</label>
+            <input class="form-control" style="text-transform:uppercase" id="num" type="text" name="usuario.num" value="@ViewBag.Num" readonly />
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="cidade">Cidade:</label>
+            <input class="form-control" id="cidade" type="text" name="usuario.cidade" value="@ViewBag.Cidade" readonly />
+        </div>
+
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="estado">Estado:</label>
+            <input class="form-control" style="text-transform:uppercase" id="estado" type="text" name="usuario.estado" value="@ViewBag.Estado" readonly />
+        </div>
+
+    </div>
+
+    <div class="form-row">  
+        <div class="form-group col-md-6">
+            <label for="telefone">Telefone:</label>
+            <input class="form-control" type="text" name="usuario.telefone" required value="@ViewBag.Telefone" readonly />
+        </div>
+
+        <div class="form-group col-md-3">
+            <a href="javascript:window.history.go(-1)" class="form-control btn btn-sm btn-danger ml-md-2">Voltar</a>
+        </div>
+    </div>
+
+</form>
+

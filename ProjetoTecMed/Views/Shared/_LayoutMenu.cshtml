@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProjetoTecMed</title>
+
+    <link rel="stylesheet" href="~/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/estilos.css">
+
+
+    <script type="text/javascript" src="~/js/jquery.js"></script>
+    @*<script type="text/javascript" src="~/css/bootstrap/js/bootstrap.js"></script>*@
+    <script type="text/javascript" src="~/css/bootstrap/js/bootstrap.min.js"></script>
+    @*<script type="text/javascript" src="~/css/bootstrap/js/npm.js"></script>*@
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+</head>
+<body>
+
+    <style type="text/css">
+
+        html, body {
+            height: 100%;
+        }
+
+        /*body {
+            background-image: url('images/fundosistema.PNG');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding: 10px;
+        }*/
+
+        #dropdown-toggle {
+            font-size: large;
+        }
+
+        .nav-link-sair {
+            font-size: large;
+        }
+
+        header{
+            height:auto;
+        }
+    </style>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container nav-justified">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-navbar" aria-controls="collapse-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img src="~/images/logo2.png" width="300px" style="max-width:100%; height:auto; margin-bottom:20px;" />
+                </div>
+
+                <div class="collapse navbar-collapse" id="collapse-navbar">
+                    <ul class="nav navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link-sair" asp-controller="Home" asp-action="BemVindo">Home</a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consulta <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-header"></li>
+                                <li><a asp-controller="Consulta" asp-action="BuscarConsulta">Buscar Consulta</a></li>
+                                <li><a asp-controller="Consulta" asp-action="ListaConsulta">Todas as Consultas</a></li>
+                                <li><a asp-controller="Consulta" asp-action="CadastrarAgenda">Cadastrar Agenda</a></li>                              
+                                <li><a asp-controller="Usuario" asp-action="ListaUsuario">Lista Usuarios</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastro <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-header"></li>
+                                <li><a asp-controller="Paciente" asp-action="CadastrarPaciente">Cadastrar Paciente</a></li>
+                                <li><a asp-controller="Usuario" asp-action="EscolhaTipoUsuario">Cadastrar Usuario</a></li>
+                                <li><a asp-controller="Paciente" asp-action="FormExcluirPaciente">Excluir Paciente</a></li>
+                                <li><a asp-controller="Paciente" asp-action="FormExcluirUsuario">Excluir Usuario</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cartão <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-header"></li>
+                                <li><a asp-controller="Paciente" asp-action="CadastrarCartao">Adicionar Cartão</a></li>
+                                <li><a asp-controller="Paciente" asp-action="CartaoPaciente">Buscar Por cartão</a></li>
+                                <li><a asp-controller="Paciente" asp-action="DescadastrarCartao">Remover Cartão</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exames <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-header"></li>
+                                <li><a asp-controller="Exames" asp-action="BuscarExames">Buscar Exames</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configurações <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-header"></li>
+                                <li><a asp-controller="Configuracoes" asp-action="Perfil">Perfil de Usuário</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link-sair" asp-controller="Login" asp-action="Logout">Sair</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="container" style="display:inline-block; width:100%; height:85%;">
+
+        @RenderBody()
+
+    </div>
+
+    <footer>
+        <div class="container nav-justified center-block">
+            <div style="display:inline-block; float:left;">
+                <img src="~/images/nova_unifieo.png" width="200px" style="max-width:100%; height:50px;" />
+            </div>
+            <div style="display:inline-block; float:right;">
+                <address>
+                    <strong>TecMed Sistemas</strong><br>
+                </address>
+                <address>
+                    E-mail: tecmed.sistema@gmail.com
+                </address>
+            </div>
+        </div>
+
+
+    </footer>
+
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"></script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @*<environment names="Staging,Production">
+            <script src="~/js/jquery.js"></script>
+            <script src="~/css/bootstrap/js/bootstrap.min.js"></script>
+            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"></script>
+            <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"></script>
+            <script src="~/js/site.min.js" asp-append-version="true"></script>
+        </environment>*@
+    @RenderSection("scripts", required: false)
+
+    @*<script src="~/css/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/js/jquery.js"></script>*@
+
+
+
+</body>
+</html>
+
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        var trigger = $('.hamburger'),
+            overlay = $('.overlay'),
+            isClosed = false;
+
+        trigger.click(function () {
+            hamburger_cross();
+        });
+
+        function hamburger_cross() {
+
+            if (isClosed == true) {
+                overlay.hide();
+                trigger.removeClass('is-open');
+                trigger.addClass('is-closed');
+                isClosed = false;
+            } else {
+                overlay.show();
+                trigger.removeClass('is-closed');
+                trigger.addClass('is-open');
+                isClosed = true;
+            }
+        }
+
+        $('[data-toggle="offcanvas"]').click(function () {
+            $('#wrapper').toggleClass('toggled');
+        });
+    });
+
+
+
+</script>*@
