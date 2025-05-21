@@ -14,7 +14,7 @@ namespace ProjetoTecMed.DAO
 
         public ConexaoDAO()
         {
-            this.conexao = new MySqlConnection("Server=35.194.14.243;Port=3306;Database=TECMEDBD;UID=admin;PWD=wesbol3565;");
+            this.conexao = new MySqlConnection("Server=35.194.14.243;Port=3306;Database=TECMEDBD;UID=admin;PWD=;");
 
             this.conexao.Open();
         }
